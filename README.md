@@ -93,13 +93,13 @@ foreach ($arr as $value) {
 Create comma separated strings from array
 
 ```php
-$arr = [1, 2, 3];
+$arr = [1, 2, 3, 4];
 
 foreach ($arr as $val) {
     $newarr .= $prefix . "'". $val . "'";
     $prefix = ', ';
 }
-// '1', '2', '3'
+// '1', '2', '3', '4'
 
 echo $newarr;
 ```
