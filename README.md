@@ -93,13 +93,13 @@ foreach ($arr as $value) {
 Create comma separated strings from array
 
 ```php
-$arr = [1, 2, 3, 4];
+$arr = [1, 2, 3];
 
 foreach ($arr as $val) {
     $newarr .= $prefix . "'". $val . "'";
     $prefix = ', ';
 }
-// '1', '2', '3', '4'
+// '1', '2', '3'
 
 echo $newarr;
 ```
@@ -109,6 +109,46 @@ Get duplicate values from an array
 ```php
 function get_duplicates( $array ) {
     return array_unique( array_diff_assoc( $array, array_unique( $array ) ) );
+}
+```
+
+iterate over elements of an associative array
+```php
+<?php
+ 
+$name = [
+    'firstname'  => 'John',
+    'lastname'   => 'Doe',
+    'middlename' => 'Bray'
+];
+ 
+foreach ($name as $key => $value) {
+    echo $key . ':' . $value . '<br>';
+}
+```
+
+iterate over public properties of an object
+```php
+<?php
+ 
+class Person
+{
+    public $firstName;
+    public $lastName;
+    public $middleName;
+ 
+    public function __construct($firstName, $lastName, $middleName)
+    {
+        $this->firstName  = $firstName;
+        $this->lastName   = $lastName;
+        $this->middleName = $middleName;
+    }
+}
+ 
+$john = new Person('John', 'Doe', 'Bray');
+ 
+foreach ($john as $propName => $propValue) {
+    echo $propName . ': ' . $propValue . '<br>';
 }
 ```
 
